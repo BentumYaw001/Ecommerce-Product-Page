@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  overflow: hidden;
+  height: 100vh;
+  min-width: 300px;
+  font-family: "Kumbh Sans";
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+nav,
+.LeftSide,
+.RightSide,
+.MainBody,
+.ItemQuantity {
+  display: flex;
+}
+
+.LeftSide,
+.RightSide {
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+nav {
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  z-index: 200;
+}
+
+.Avatar {
+  width: 35px;
+  height: 35px;
+}
+
+.Logo {
+  width: 60%;
+  height: 60%;
+}
+
+.LeftSide {
+  margin-left: -15px;
+}
+.RightSide {
+  margin-right: 20px;
+}
+p,
+del {
+  color: gray;
+}
+
+.MainBody {
+  padding: 15px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ItemImage {
+  margin-top: 50px;
+  width: 100%;
+  height: 270px;
+}
+
+.PriceTag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+.DiscountedPrice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Discount {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 5px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+del {
+  font-weight: bold;
+}
+
+.ItemQuantity {
+  background-color: hsl(223, 64%, 98%);
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.Plus {
+  width: 10px;
+  height: 10px;
+}
+
+.Minus {
+  width: 15px;
+  height: 5px;
+}
+
+.AddToCart {
+  background-color: hsl(26, 100%, 55%);
+  padding: 15px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.Minus,
+.Plus,
+.AddToCart,
+.NextItem img {
+  cursor: pointer;
+}
+
+.NextItem img {
+  background-color: white;
+  padding: 8px 10px;
+
+  width: 8px;
+  border-radius: 50%;
+}
+.SelectItem {
+  position: relative;
+}
+
+.NextItem {
+  display: flex;
+  width: clamp(75%, 90%, 95%);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  z-index: 3;
+  position: absolute;
+  top: 55%;
+}
