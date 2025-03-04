@@ -202,9 +202,10 @@ li {
   background-color: white;
   z-index: 201;
   min-width: 290px;
-  width: 98%;
+  width: 95%;
   min-height: 200px;
   border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 h3 {
@@ -215,4 +216,36 @@ h3 {
 .Cart p {
   text-align: center;
   margin: 50px;
+}
+
+.ProductList {
+  display: flex;
+  gap: 15px;
+}
+
+.ProductList p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: start;
+}
+.ProductImage {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.Checkout {
+  width: clamp(75%, 80%, 90%);
+  margin: 20px auto;
+}
+
+.DeleteImage {
+  height: 20px;
+  width: 15px;
+}
+
+.DeleteItem {
+  width: 100%;
+  justify-content: space-around;
 }

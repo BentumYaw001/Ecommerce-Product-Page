@@ -1,7 +1,8 @@
-import { useCartStore } from "./Store";
-
+import { useCartStore, useProductStore } from "./Store";
+import DeleteItem from "/src/images/icon-delete.svg";
 function Cart() {
-  const { CartContent } = useCartStore();
+  const { CartContent, clearCart, removeItem, isCartClosed } = useCartStore();
+  const { cart } = useProductStore();
   return (
     <>
       <div className="CartCentered">
@@ -10,7 +11,45 @@ function Cart() {
           {CartContent.length == 0 ? (
             <p>Your cart is empty</p>
           ) : (
-            <p>Your cart is full</p>
+            <>
+              <ul>
+                {CartContent.map((item) => (
+                  <li key={item.id} className="ProductList">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="ProductImage"
+                    />
+                    <div className="ProductList DeleteItem">
+                      <div>
+                        <p>{item.name}</p>
+                        <div className="ProductList ">
+                          <p>
+                            ${item.price.toFixed(2)} x {cart}
+                          </p>
+                          <h4>${(item.price * cart).toFixed(2)}</h4>
+                        </div>
+                      </div>
+                      <img
+                        src={DeleteItem}
+                        alt="delete item image"
+                        onClick={() => removeItem(item.id)}
+                        className="DeleteImage"
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div
+                onClick={() => {
+                  clearCart();
+                  isCartClosed();
+                }}
+                className="AddToCart Checkout"
+              >
+                Checkout
+              </div>
+            </>
           )}
         </div>
       </div>

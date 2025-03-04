@@ -19,4 +19,22 @@ export const useCartStore = create((set, get) => ({
   isCartClosed: () => set({ CartOpen: false }),
   toggleCart: () => set({ CartOpen: !get().CartOpen }),
   CartContent: [],
+  addItem: (item) =>
+    set((state) => {
+      const exists = state.CartContent.some(
+        (cartItem) => cartItem.id === item.id
+      );
+      if (!exists) {
+        return { CartContent: [...state.CartContent, item] };
+      }
+      return state;
+    }),
+
+  removeItem: (itemId) =>
+    set((state) => ({
+      CartContent: state.CartContent.filter((item) => item.id !== itemId),
+    })),
+
+  // Clear the entire cart
+  clearCart: () => set({ CartContent: [] }),
 }));
