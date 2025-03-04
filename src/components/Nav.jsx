@@ -2,13 +2,15 @@ import Logo from "/src/images/logo.svg";
 import Menu from "/src/images/icon-menu.svg";
 import Cart from "/src/images/icon-cart.svg";
 import Avatar from "/src/images/image-avatar.png";
+import { useSideBarStore } from "./Store";
 
 function NavBar() {
+  const { isOpen } = useSideBarStore();
   return (
     <>
       <nav>
         <div className="LeftSide">
-          <img src={Menu} alt="" />
+          <img src={Menu} alt="" onClick={isOpen} />
           <img src={Logo} alt="" className="Logo" />
         </div>
         <div className="RightSide">

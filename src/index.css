@@ -65,7 +65,7 @@ del {
 .ItemImage {
   margin-top: 50px;
   width: 100%;
-  height: 270px;
+  height: 290px;
 }
 
 .PriceTag {
@@ -155,4 +155,37 @@ del {
   z-index: 3;
   position: absolute;
   top: 55%;
+}
+
+.SideBar {
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(0, 0%, 0%, 0.2);
+  position: absolute;
+  z-index: 500;
+  overflow: hidden;
+}
+
+.SideItems {
+  background-color: white;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  padding: 10px 30px;
+  width: 55%;
+  height: 100vh;
+  padding: 20px;
+}
+
+.SideItems img {
+  width: 20px;
+  height: 20px;
+}
+
+ol {
+  list-style: none;
+}
+
+li {
+  margin: 10px;
 }

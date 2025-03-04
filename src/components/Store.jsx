@@ -6,3 +6,9 @@ export const useProductStore = create((set) => ({
   removeFromCart: () =>
     set((state) => ({ cart: state.cart > 0 ? state.cart - 1 : 0 })),
 }));
+
+export const useSideBarStore = create((set) => ({
+  SideBarOpen: false,
+  isOpen: () => set({ SideBarOpen: true }),
+  isClosed: () => set({ SideBarOpen: false }),
+}));
