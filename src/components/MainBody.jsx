@@ -1,4 +1,3 @@
-import Product1 from "/src/images/image-product-1.jpg";
 import Minus from "/src/images/icon-minus.svg";
 import Plus from "/src/images/icon-plus.svg";
 import Previous from "/src/images/icon-previous.svg";
@@ -14,22 +13,21 @@ import {
   useProductStore,
 } from "./Store";
 import { ShoeData } from "./Products";
+import { useEffect, useState } from "react";
 
 function ContentBody() {
   const { cart, addToCart, removeFromCart, ResetCart } = useProductStore();
   const { isCartClosed, addItem } = useCartStore();
   const { isAddItem } = useCartFunctionalityStore();
+  const [DisplayCart, setDisplayCart] = useState(0);
+
+  useEffect(() => {
+    setDisplayCart(cart);
+  }, [cart]);
+
   return (
     <>
       <div onClick={isCartClosed}>
-        {/* <div className="SelectItem">
-          <img src={Product1} alt="" className="ItemImage" />
-          <div className="NextItem">
-            <img src={Previous} alt="" />
-            <img src={Next} alt="" />
-          </div>
-        </div> */}
-
         <div className="SelectItem">
           <Swiper
             spaceBetween={10}
@@ -83,7 +81,7 @@ function ContentBody() {
               className="Minus"
               onClick={removeFromCart}
             />
-            <h4>{cart}</h4>
+            <h4>{DisplayCart}</h4>
             <img src={Plus} alt="" className="Plus" onClick={addToCart} />
           </div>
           <div
@@ -92,6 +90,7 @@ function ContentBody() {
               if (cart > 0) {
                 addItem(ShoeData);
                 isAddItem();
+                setDisplayCart(0);
               }
             }}
           >

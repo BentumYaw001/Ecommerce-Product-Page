@@ -45,3 +45,9 @@ export const useCartFunctionalityStore = create((set) => ({
   isAddItem: () => set({ AddItem: true }),
   isRemoveItem: () => set({ AddItem: false }),
 }));
+
+export const useCheckoutStore = create((set) => ({
+  checkout: false,
+  isSuccess: () => set({ checkout: true }),
+  isNotSuccess: () => set({ checkout: false }),
+}));

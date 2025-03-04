@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import {
   useCartFunctionalityStore,
   useCartStore,
+  useCheckoutStore,
   useProductStore,
 } from "./Store";
 import DeleteItem from "/src/images/icon-delete.svg";
@@ -10,6 +11,7 @@ function Cart() {
   const { CartContent, clearCart, removeItem, isCartClosed } = useCartStore();
   const { isRemoveItem } = useCartFunctionalityStore();
   const { cart, ResetCart } = useProductStore();
+  const { isSuccess } = useCheckoutStore();
 
   useEffect(() => {
     if (CartContent.length === 0) {
@@ -47,7 +49,10 @@ function Cart() {
                       <img
                         src={DeleteItem}
                         alt="delete item image"
-                        onClick={() => removeItem(item.id)}
+                        onClick={() => {
+                          removeItem(item.id);
+                          ResetCart();
+                        }}
                         className="DeleteImage"
                       />
                     </div>
@@ -60,6 +65,7 @@ function Cart() {
                   isCartClosed();
                   ResetCart();
                   isRemoveItem();
+                  isSuccess();
                 }}
                 className="AddToCart Checkout"
               >

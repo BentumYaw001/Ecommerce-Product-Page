@@ -266,3 +266,23 @@ h3 {
   margin-right: 10px;
   position: relative;
 }
+
+.Success {
+  background-color: white;
+  width: 90%;
+  height: 220px;
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Success h5 {
+  text-align: center;
+  margin: 10px;
+  font-size: 1.2rem;
+  color: green;
+}
