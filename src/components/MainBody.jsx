@@ -3,6 +3,11 @@ import Minus from "/src/images/icon-minus.svg";
 import Plus from "/src/images/icon-plus.svg";
 import Previous from "/src/images/icon-previous.svg";
 import Next from "/src/images/icon-next.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { ShoeImages } from "./Products";
 import {
   useCartFunctionalityStore,
   useCartStore,
@@ -17,13 +22,44 @@ function ContentBody() {
   return (
     <>
       <div onClick={isCartClosed}>
-        <div className="SelectItem">
+        {/* <div className="SelectItem">
           <img src={Product1} alt="" className="ItemImage" />
           <div className="NextItem">
             <img src={Previous} alt="" />
             <img src={Next} alt="" />
           </div>
+        </div> */}
+
+        <div className="SelectItem">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1}
+            navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
+            modules={[Navigation]}
+            loop={true}
+            className="swiper-container"
+          >
+            {ShoeImages.map((image, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  className="ItemImage"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="NextItem">
+            <img
+              src={Previous}
+              alt="Previous"
+              className="prev-btn cursor-pointer"
+            />
+            <img src={Next} alt="Next" className="next-btn cursor-pointer" />
+          </div>
         </div>
+
         <div className="MainBody">
           <p>SNEAKER COMPANY</p>
           <h2>Fall Limited Edition Sneakers</h2>
