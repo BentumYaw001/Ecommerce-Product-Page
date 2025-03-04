@@ -12,3 +12,11 @@ export const useSideBarStore = create((set) => ({
   isOpen: () => set({ SideBarOpen: true }),
   isClosed: () => set({ SideBarOpen: false }),
 }));
+
+export const useCartStore = create((set, get) => ({
+  CartOpen: false,
+  isCartOpen: () => set({ CartOpen: true }),
+  isCartClosed: () => set({ CartOpen: false }),
+  toggleCart: () => set({ CartOpen: !get().CartOpen }),
+  CartContent: [],
+}));

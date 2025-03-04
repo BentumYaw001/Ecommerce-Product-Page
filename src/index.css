@@ -184,8 +184,35 @@ del {
 
 ol {
   list-style: none;
+  font-weight: bold;
 }
 
 li {
   margin: 10px;
+}
+
+.CartCentered {
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+.Cart {
+  position: absolute;
+  top: 60px;
+  background-color: white;
+  z-index: 201;
+  min-width: 290px;
+  width: 98%;
+  min-height: 200px;
+  border-radius: 15px;
+}
+
+h3 {
+  padding: 20px;
+  border-bottom: 1px solid hsl(0, 0%, 50%, 0.2);
+}
+
+.Cart p {
+  text-align: center;
+  margin: 50px;
 }
