@@ -249,3 +249,20 @@ h3 {
   width: 100%;
   justify-content: space-around;
 }
+
+.CartAlert {
+  background-color: hsl(26, 100%, 55%);
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 0px;
+  padding: 2px 3px;
+  top: -7px;
+}
+
+.CartFilled {
+  margin-right: 10px;
+  position: relative;
+}

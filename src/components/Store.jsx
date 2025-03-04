@@ -5,6 +5,7 @@ export const useProductStore = create((set) => ({
   addToCart: () => set((state) => ({ cart: state.cart + 1 })),
   removeFromCart: () =>
     set((state) => ({ cart: state.cart > 0 ? state.cart - 1 : 0 })),
+  ResetCart: () => set(() => ({ cart: 0 })),
 }));
 
 export const useSideBarStore = create((set) => ({
@@ -37,4 +38,10 @@ export const useCartStore = create((set, get) => ({
 
   // Clear the entire cart
   clearCart: () => set({ CartContent: [] }),
+}));
+
+export const useCartFunctionalityStore = create((set) => ({
+  AddItem: false,
+  isAddItem: () => set({ AddItem: true }),
+  isRemoveItem: () => set({ AddItem: false }),
 }));

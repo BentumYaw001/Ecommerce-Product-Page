@@ -1,8 +1,22 @@
-import { useCartStore, useProductStore } from "./Store";
+import { useEffect } from "react";
+
+import {
+  useCartFunctionalityStore,
+  useCartStore,
+  useProductStore,
+} from "./Store";
 import DeleteItem from "/src/images/icon-delete.svg";
 function Cart() {
   const { CartContent, clearCart, removeItem, isCartClosed } = useCartStore();
-  const { cart } = useProductStore();
+  const { isRemoveItem } = useCartFunctionalityStore();
+  const { cart, ResetCart } = useProductStore();
+
+  useEffect(() => {
+    if (CartContent.length === 0) {
+      isRemoveItem();
+    }
+  }, [CartContent.length]);
+
   return (
     <>
       <div className="CartCentered">
@@ -44,6 +58,8 @@ function Cart() {
                 onClick={() => {
                   clearCart();
                   isCartClosed();
+                  ResetCart();
+                  isRemoveItem();
                 }}
                 className="AddToCart Checkout"
               >
