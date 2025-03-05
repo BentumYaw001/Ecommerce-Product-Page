@@ -27,7 +27,7 @@ function ContentBody() {
 
   return (
     <>
-      <div onClick={isCartClosed}>
+      <div onClick={isCartClosed} className="MainBodyDesktop">
         <div className="SelectItem">
           <Swiper
             spaceBetween={10}

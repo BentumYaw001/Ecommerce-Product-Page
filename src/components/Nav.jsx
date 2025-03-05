@@ -19,8 +19,17 @@ function NavBar() {
     <>
       <nav>
         <div className="LeftSide">
-          <img src={Menu} alt="" onClick={isOpen} />
+          <img src={Menu} alt="" onClick={isOpen} className="Menu" />
           <img src={Logo} alt="" className="Logo" />
+          <div className="">
+            <ol className="NavItems">
+              <li>Collections</li>
+              <li>Men</li>
+              <li>Women</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ol>
+          </div>
         </div>
         <div className="RightSide">
           <div className="CartFilled" onClick={toggleCart}>
