@@ -406,4 +406,8 @@ img {
     justify-content: space-between;
     margin-top: 10px;
   }
+
+  .ModalImage {
+    border-radius: 25px;
+  }
 }

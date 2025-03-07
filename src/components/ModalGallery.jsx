@@ -19,7 +19,7 @@ const ModalGallery = () => {
     }
   }, [isModalOpen, currentIndex]);
 
-  if (!isModalOpen) return null; // Hide modal if not open
+  if (!isModalOpen) return null;
 
   return (
     <div className="modal-overlay" onClick={closeModal}>
@@ -44,7 +44,7 @@ const ModalGallery = () => {
               <img
                 src={image.image}
                 alt={`Slide ${index + 1}`}
-                className="ItemImage"
+                className="ItemImage ModalImage"
               />
             </SwiperSlide>
           ))}
