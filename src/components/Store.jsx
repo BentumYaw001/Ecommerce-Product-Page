@@ -51,3 +51,10 @@ export const useCheckoutStore = create((set) => ({
   isSuccess: () => set({ checkout: true }),
   isNotSuccess: () => set({ checkout: false }),
 }));
+
+export const useGalleryStore = create((set) => ({
+  isModalOpen: false,
+  currentIndex: 0,
+  openModal: (index) => set({ isModalOpen: true, currentIndex: index }),
+  closeModal: () => set({ isModalOpen: false }),
+}));
